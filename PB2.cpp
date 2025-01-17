@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
     stack<int>st;
-    stack<int>st2;
+   queue<int>que;
     int n;cin>>n;
     for(int i=0; i<n; i++)
     {
@@ -14,23 +14,23 @@ int main()
     for(int i=0; i<m; i++)
     {
         int val;cin>>val;
-        st2.push(val);
+        que.push(val);
     }
 
-    if(st.size()!=st2.size())
+    if(st.size()!=que.size())
     {
         cout<<"NO"<<endl;
         return 0;
     }
-    while (!st.empty()&&!st2.empty())
+    while (!st.empty()&&!que.empty())
     {
-        if(st.top()!=st2.top())
+        if(st.top()!=que.front())
         {
             cout<<"NO";
             return 0;
         }
         st.pop();
-        st2.pop();
+        que.pop();
     }
     cout<<"YES"<<endl;
     
